@@ -1,9 +1,9 @@
 # api_final
 <h2>Как запустить проект:</h2>
-*Клонировать репозиторий и перейти в него в командной строке:*
+Клонировать репозиторий и перейти в него в командной строке:
 
-git clone https://github.com/yandex-praktikum/kittygram.git
-cd kittygram
+git clone https://github.com/Andromaril/api_final_yatube.git
+
 *Cоздать и активировать виртуальное окружение:*
 
 python3 -m venv env
