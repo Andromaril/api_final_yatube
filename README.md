@@ -1,20 +1,20 @@
 # api_final
-<h1>Как запустить проект:</h1>
-Клонировать репозиторий и перейти в него в командной строке:
+<h2>Как запустить проект:</h2>
+*Клонировать репозиторий и перейти в него в командной строке:*
 
 git clone https://github.com/yandex-praktikum/kittygram.git
 cd kittygram
-Cоздать и активировать виртуальное окружение:
+*Cоздать и активировать виртуальное окружение:*
 
 python3 -m venv env
 source env/bin/activate
-Установить зависимости из файла requirements.txt:
+*Установить зависимости из файла requirements.txt:*
 
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
-Выполнить миграции:
+*Выполнить миграции:*
 
 python3 manage.py migrate
-Запустить проект:
+*Запустить проект:*
 
 python3 manage.py runserver
