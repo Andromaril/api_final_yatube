@@ -1,5 +1,5 @@
 # api_final
-Как запустить проект:
+<h1>Как запустить проект:</h1>
 Клонировать репозиторий и перейти в него в командной строке:
 
 git clone https://github.com/yandex-praktikum/kittygram.git
