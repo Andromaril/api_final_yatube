@@ -3,11 +3,9 @@ from api.serializers import (CommentSerializer, FollowSerializer,
 from django.contrib.auth import get_user_model
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
-from posts.models import Follow, Group, Post
-from rest_framework import filters, permissions, viewsets
+from posts.models import Group, Post
+from rest_framework import filters, mixins, permissions, viewsets
 from rest_framework.pagination import LimitOffsetPagination
-
-from .permissions import GetOrPostOnly
 
 User = get_user_model()
 
@@ -71,10 +69,14 @@ class CommentViewSet(viewsets.ModelViewSet):
         return super(CommentViewSet, self).perform_destroy(serializer)
 
 
+class CreateRetrieveViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
+                            viewsets.GenericViewSet):
+    pass
+
+
 class FollowViewSet(viewsets.ModelViewSet):
-    queryset = Follow.objects.all()
+
     serializer_class = FollowSerializer
-    permission_classes = (GetOrPostOnly,)
     filter_backends = (filters.SearchFilter,)
     search_fields = ('user__username', 'following__username')
 

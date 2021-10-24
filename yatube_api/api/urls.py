@@ -5,7 +5,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'groups', GroupViewSet)
 router.register(r'posts', PostViewSet)
-router.register(r'follow', FollowViewSet)
+router.register(r'follow', FollowViewSet, basename='follow')
 router.register(r'posts/(?P<post_id>\d+)/comments',
                 CommentViewSet,
                 basename='comment')
@@ -13,6 +13,5 @@ router.register(r'posts/(?P<post_id>\d+)/comments',
 
 urlpatterns = [
     path('v1/', include(router.urls)),
-    path('v1/', include('djoser.urls')),
     path('v1/', include('djoser.urls.jwt')),
 ]
