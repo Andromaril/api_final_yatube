@@ -74,7 +74,7 @@ class CreateRetrieveViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
     pass
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(CreateRetrieveViewSet):
 
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
